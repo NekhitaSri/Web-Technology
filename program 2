@@ -1,0 +1,81 @@
+                                                                                INDEX.HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+</head>
+
+<frameset rows="20%,80%">
+
+    <!-- Top Frame -->
+    <frame src="header.html" name="headerFrame">
+
+    <frameset cols="25%,75%">
+
+        <!-- Left Navigation Frame -->
+        <frame src="nav.html" name="navFrame">
+
+        <!-- Right Content Frame -->
+        <frame src="login.html" name="contentFrame">
+
+    </frameset>
+
+</frameset>
+
+</html>
+
+                                                                                HEADER.HTML
+
+<!DOCTYPE html>
+<html>
+<body style="background-color: black; color: white; text-align: center;">
+    <h1>Online Book Store</h1>
+</body>
+</html>
+
+                                                                                NAV.HTML
+<!DOCTYPE html>
+<html>
+<body style="background-color: black;">
+<style>
+    h3{
+        color: white;
+    }
+</style>
+
+<h3>Menu</h3>
+
+<ul>
+    <li><a href="login.html" target="contentFrame">Login</a></li>
+    <li><a href="catalogue.html" target="contentFrame">Catalogue</a></li>
+    <li><a href="register.html" target="contentFrame">Register</a></li>
+</ul>
+
+</body>
+</html>
+                                                                            LOGIN.HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Login Page</h2>
+
+<form>
+    Username:<br>
+    <input type="text" name="username"><br><br>
+
+    Password:<br>
+    <input type="password" name="password"><br><br>
+
+    <input type="submit" value="Login">
+</form>
+
+</body>
+</html>
+
+
