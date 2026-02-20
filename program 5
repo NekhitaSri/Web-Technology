@@ -1,0 +1,34 @@
+                                                                            INDEX.HTML
+<!DOCTYPE html>
+<html>
+<frameset cols="30%,70%">
+    <frame src="content.html" name="left">
+    <frame src="map.html" name="right">
+</frameset>
+</html>
+                                                                          MAP.HTML
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Google Map</h3>
+<iframe
+src="https://www.google.com/maps?q=Chennai&output=embed"
+width="600"
+height="450">
+</iframe>
+<br><br>
+<a href="content.html" target="right">
+</a>
+</body>
+</html>
+
+                                                                          CONTENT.HTML
+
+  <!DOCTYPE html>
+<html>
+<body>
+<h2>Location Information</h2>
+<p>This content loads inside the frame.</p>
+<a href="map.html" target="right">Back to Map</a>
+</body>
+</html>
