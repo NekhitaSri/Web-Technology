@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal CSS - Fitness Tracker</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            font-family: Arial;
+        }
+        h1 {
+            color: darkgreen;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            color: brown;
+        }
+        .box {
+            border: 2px solid black;
+            padding: 10px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Fitness and Health Tracker</h1>
+    <p>Maintain your health by tracking daily activities.</p>
+    <div class="box">
+        Steps Walked Today: 8000 steps
+    </div>
+</body>
+</html>
