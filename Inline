@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline CSS - Fitness Tracker</title>
+</head>
+<body style="background-color: #f2f2f2; font-family: Arial;">
+    <h1 style="color: blue; text-align: center;">
+        Online Fitness and Health Tracker
+    </h1>
+    <p style="color: green; font-size: 18px;">
+        Track your daily workouts and stay healthy.
+    </p>
+    <div style="border: 2px solid black; padding: 10px; background-color: lightyellow;">
+        Calories Burned Today: 350 kcal
+    </div>
+</body>
+</html>
