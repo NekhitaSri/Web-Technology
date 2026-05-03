@@ -1,0 +1,24 @@
+package com.example.calculatorapp
+
+    import android.os.Bundle
+    import android.widget.*
+    import androidx.appcompat.app.AppCompatActivity
+
+    class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    val n1 = findViewById<EditText>(R.id.num1)
+    val n2 = findViewById<EditText>(R.id.num2)
+        val btn = findViewById<Button>(R.id.btnAdd)
+            val res = findViewById<TextView>(R.id.result)
+
+                btn.setOnClickListener {
+                val a = n1.text.toString().toInt()
+                val b = n2.text.toString().toInt()
+                res.text = "Result = ${a + b}"
+                }
+                }
+                }
