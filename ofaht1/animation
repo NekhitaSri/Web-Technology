@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Record - CSS Animation</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial;
+            text-align: center;
+        }
+        h1 {
+            color: darkblue;
+            animation: slideIn 3s infinite alternate;
+        }
+        @keyframes slideIn {
+            from {
+                letter-spacing: 2px;
+                color: blue;
+            }
+            to {
+                letter-spacing: 8px;
+                color: red;
+            }
+        }
+        .card {
+            width: 300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            animation: moveUp 4s infinite alternate;
+        }
+        @keyframes moveUp {
+            from {
+                transform: translateY(0px);
+                background-color: lightgreen;
+            }
+            to {
+                transform: translateY(-20px);
+                background-color: lightblue;
+            }
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+        th {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Fitness and Health Tracker</h1>
+    <div class="card">
+        <h2>Fitness Record</h2>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Activity</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Steps Walked</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>Calories Burned</td>
+                <td>350 kcal</td>
+            </tr>
+            <tr>
+                <td>Water Intake</td>
+                <td>2 Litres</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

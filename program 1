@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record Management</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body >
+
+    <h1>Student Record Information</h1>
+
+    <h2>General Student Details</h2>
+    <ul>
+        <li>Name</li>
+        <li>Department</li>
+        <li>Year</li>
+        <li>Section</li>
+    </ul>
+
+    <h2>Academic Information</h2>
+    <ol>
+        <li>Semester 1 - Basics of Programming</li>
+        <li>Semester 2 - Data Structures</li>
+        <li>Semester 3 - Database Management</li>
+        <li>Semester 4 - Web Development</li>
+        <li>Registration Process Completion</li>
+    </ol>
+
+    <h2>Student Records Table</h2>
+
+    <table cellpadding="5" cellspacing="5">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Year</th>
+            <th>Section</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Rahul Sharma</td>
+            <td>Computer Science</td>
+            <td>2nd</td>
+            <td>A</td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>Priya Verma</td>
+            <td>Information Technology</td>
+            <td>3rd</td>
+            <td>B</td>
+        </tr>
+
+        <tr>
+            <td>103</td>
+            <td>Amit Singh</td>
+            <td>Electronics</td>
+            <td>1st</td>
+            <td>C</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

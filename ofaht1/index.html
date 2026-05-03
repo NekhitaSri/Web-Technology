@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VitaCore – Online Fitness & Health Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <i class="fas fa-heartbeat logo-icon"></i>
+    <span class="logo-text">VitaCore</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#tracker">Tracker</a></li>
+    <li><a href="#nutrition">Nutrition</a></li>
+    <li><a href="#diet-plans">Diet Plans</a></li>
+    <li><a href="#fitness">Fitness</a></li>
+    <li><a href="#health">Health</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-signin" onclick="openModal('signin')">Sign In</button>
+    <button class="btn-signup" onclick="openModal('signup')">Sign Up</button>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge"><i class="fas fa-leaf"></i> Your Wellness Journey Starts Here</span>
+    <h1 class="hero-title">Transform Your<br><span class="gradient-text">Body & Mind</span></h1>
+    <p class="hero-sub">AI-powered health tracking, personalized diet plans, and fitness coaching — built for every age, every goal, every lifestyle.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openModal('signup')"><i class="fas fa-rocket"></i> Get Started Free</button>
+      <button class="btn-outline" onclick="document.getElementById('tracker').scrollIntoView({behavior:'smooth'})"><i class="fas fa-calculator"></i> Check Your Health</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" data-target="50">0</span><span>K+</span><small>Active Users</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="200">0</span><span>+</span><small>Diet Plans</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="98">0</span><span>%</span><small>Satisfaction</small></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-arrow"></div>
+    <span>Scroll to Explore</span>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<section class="features-strip" id="features">
+  <div class="feature-pill"><i class="fas fa-dna"></i> Personalized Plans</div>
+  <div class="feature-pill"><i class="fas fa-utensils"></i> Smart Nutrition</div>
+  <div class="feature-pill"><i class="fas fa-dumbbell"></i> Workout Tracking</div>
+  <div class="feature-pill"><i class="fas fa-baby"></i> All Age Groups</div>
+  <div class="feature-pill"><i class="fas fa-stethoscope"></i> Health Monitoring</div>
+  <div class="feature-pill"><i class="fas fa-brain"></i> AI Suggestions</div>
+</section>
+
+<!-- BMI TRACKER -->
+<section class="tracker-section" id="tracker">
+  <div class="section-header">
+    <span class="section-tag">Smart Tracker</span>
+    <h2>Know Your <span class="gradient-text">Health Score</span></h2>
+    <p>Enter your details and get personalized food & fitness recommendations instantly.</p>
+  </div>
+  <div class="tracker-container">
+    <div class="tracker-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="userName" placeholder="Your name"/>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-birthday-cake"></i> Age</label>
+          <input type="number" id="userAge" placeholder="e.g. 25" min="0" max="120"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label><i class="fas fa-venus-mars"></i> Gender</label>
+          <select id="userGender">
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-ruler-vertical"></i> Height (cm)</label>
+          <input type="number" id="userHeight" placeholder="e.g. 170"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label><i class="fas fa-weight"></i> Weight (kg)</label>
+          <input type="number" id="userWeight" placeholder="e.g. 65"/>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-running"></i> Activity Level</label>
+          <select id="userActivity">
+            <option value="">Select level</option>
+            <option value="sedentary">Sedentary</option>
+            <option value="light">Lightly Active</option>
+            <option value="moderate">Moderately Active</option>
+            <option value="active">Very Active</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group full">
+        <label><i class="fas fa-heartbeat"></i> Health Condition</label>
+        <select id="userCondition">
+          <option value="none">None / Healthy</option>
+          <option value="diabetes">Diabetes</option>
+          <option value="hypertension">Hypertension</option>
+          <option value="heart">Heart Disease</option>
+          <option value="pregnant">Pregnancy</option>
+          <option value="obesity">Obesity</option>
+          <option value="thyroid">Thyroid</option>
+        </select>
+      </div>
+      <button class="btn-primary full-btn" onclick="calculateAndSuggest()">
+        <i class="fas fa-magic"></i> Get My Health Plan
+      </button>
+    </div>
+    <div class="tracker-result" id="trackerResult">
+      <div class="result-placeholder">
+        <i class="fas fa-heartbeat pulse-icon"></i>
+        <p>Fill in your details to see your personalized health report</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRITION -->
+<section class="nutrition-section" id="nutrition">
+  <div class="section-header light">
+    <span class="section-tag green">Smart Nutrition</span>
+    <h2>Food That <span class="gradient-text">Heals & Fuels</span></h2>
+    <p>Handpicked superfoods with nutritional insights for a stronger you.</p>
+  </div>
+  <div class="food-grid" id="foodGrid"></div>
+</section>
+
+<!-- DIET PLANS -->
+<section class="diet-section" id="diet-plans">
+  <div class="section-header">
+    <span class="section-tag">Tailored For You</span>
+    <h2>Diet Plans for <span class="gradient-text">Every Stage of Life</span></h2>
+    <p>Choose your life stage and get a complete, scientifically crafted diet plan.</p>
+  </div>
+  <div class="life-tabs">
+    <button class="tab-btn active" onclick="showDietPlan('baby',this)"><i class="fas fa-baby"></i> Baby</button>
+    <button class="tab-btn" onclick="showDietPlan('toddler',this)"><i class="fas fa-child"></i> Toddler</button>
+    <button class="tab-btn" onclick="showDietPlan('teen',this)"><i class="fas fa-user-graduate"></i> Teenager</button>
+    <button class="tab-btn" onclick="showDietPlan('adult',this)"><i class="fas fa-user"></i> Adult</button>
+    <button class="tab-btn" onclick="showDietPlan('pregnant',this)"><i class="fas fa-female"></i> Pregnant</button>
+    <button class="tab-btn" onclick="showDietPlan('elder',this)"><i class="fas fa-user-tie"></i> Elderly</button>
+    <button class="tab-btn" onclick="showDietPlan('patient',this)"><i class="fas fa-notes-medical"></i> Patients</button>
+  </div>
+  <div class="diet-plan-content" id="dietPlanContent"></div>
+</section>
+
+<!-- FITNESS -->
+<section class="fitness-section" id="fitness">
+  <div class="section-header light">
+    <span class="section-tag">Move Better</span>
+    <h2>Fitness <span class="gradient-text">Features</span></h2>
+    <p>Everything you need to stay active, motivated, and on track.</p>
+  </div>
+  <div class="fitness-cards">
+    <div class="fitness-card"><div class="fc-icon"><i class="fas fa-dumbbell"></i></div><h3>Workout Plans</h3><p>Beginner to advanced routines curated by certified trainers. Home or gym — your choice.</p><span class="fc-tag">500+ Exercises</span></div>
+    <div class="fitness-card"><div class="fc-icon"><i class="fas fa-fire-alt"></i></div><h3>Calorie Burner</h3><p>Track calories burned in real-time. Set daily burn goals and celebrate milestones.</p><span class="fc-tag">Live Tracking</span></div>
+    <div class="fitness-card"><div class="fc-icon"><i class="fas fa-chart-line"></i></div><h3>Progress Charts</h3><p>Visual weekly and monthly reports on weight, BMI, strength, and endurance improvements.</p><span class="fc-tag">Smart Analytics</span></div>
+    <div class="fitness-card"><div class="fc-icon"><i class="fas fa-moon"></i></div><h3>Sleep Tracker</h3><p>Quality sleep is half the battle. Monitor your sleep cycles and get improvement tips.</p><span class="fc-tag">Recovery Insights</span></div>
+    <div class="fitness-card"><div class="fc-icon"><i class="fas fa-tint"></i></div><h3>Hydration Log</h3><p>Track daily water intake with smart reminders and hydration goals.</p><span class="fc-tag">Stay Hydrated</span></div>
+    <div class="fitness-card"><div class="fc-icon"><i class="fas fa-medal"></i></div><h3>Challenges & Rewards</h3><p>Join community challenges, earn badges, and stay motivated with streak rewards.</p><span class="fc-tag">Gamified Health</span></div>
+  </div>
+</section>
+
+<!-- HEALTH -->
+<section class="health-section" id="health">
+  <div class="section-header">
+    <span class="section-tag">Wellness Hub</span>
+    <h2>Your Complete <span class="gradient-text">Health Dashboard</span></h2>
+    <p>Monitor vitals, set health goals, and get condition-specific recommendations.</p>
+  </div>
+  <div class="health-grid">
+    <div class="health-card hc-large">
+      <div class="hc-icon"><i class="fas fa-heart"></i></div>
+      <h3>Heart Health</h3>
+      <p>Monitor heart rate, blood pressure logs, and get cardio fitness recommendations.</p>
+      <ul><li><i class="fas fa-check-circle"></i> BP Logging</li><li><i class="fas fa-check-circle"></i> Cardio Workouts</li><li><i class="fas fa-check-circle"></i> Heart-Healthy Recipes</li></ul>
+    </div>
+    <div class="health-card"><div class="hc-icon green"><i class="fas fa-syringe"></i></div><h3>Diabetes Care</h3><p>Sugar-smart diet plans, glycemic index food guides, and lifestyle tips for diabetics.</p></div>
+    <div class="health-card"><div class="hc-icon purple"><i class="fas fa-brain"></i></div><h3>Mental Wellness</h3><p>Stress management, meditation guides, and mood tracking for mental balance.</p></div>
+    <div class="health-card"><div class="hc-icon orange"><i class="fas fa-bone"></i></div><h3>Bone & Joint Health</h3><p>Calcium-rich food plans, posture tips, and low-impact exercises for joint care.</p></div>
+    <div class="health-card"><div class="hc-icon teal"><i class="fas fa-wind"></i></div><h3>Respiratory Health</h3><p>Breathing exercises, anti-inflammatory diets, and asthma-friendly workout guides.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-header">
+    <span class="section-tag">Real Stories</span>
+    <h2>Lives <span class="gradient-text">Transformed</span></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p>"VitaCore helped me lose 12kg in 3 months with the personalized diet plan. The food suggestions were spot on!"</p>
+      <div class="t-user"><img src="https://i.pravatar.cc/50?img=1" alt="user"/><div><strong>Priya S.</strong><small>Lost 12 kg in 3 months</small></div></div>
+    </div>
+    <div class="testimonial-card featured">
+      <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p>"As a diabetic, I struggled to find the right foods. VitaCore's health-specific diet plan changed my life. My sugar levels are now under control!"</p>
+      <div class="t-user"><img src="https://i.pravatar.cc/50?img=11" alt="user"/><div><strong>Ramesh K.</strong><small>Diabetic Patient, 58 yrs</small></div></div>
+    </div>
+    <div class="testimonial-card">
+      <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p>"The pregnancy diet plan was a blessing. Healthy baby, healthy mom! Every meal was delicious and nutritious."</p>
+      <div class="t-user"><img src="https://i.pravatar.cc/50?img=5" alt="user"/><div><strong>Ananya M.</strong><small>New Mother</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2>Start Your Health Journey <span class="gradient-text">Today</span></h2>
+    <p>Join 50,000+ users who have transformed their lifestyle with VitaCore.</p>
+    <button class="btn-primary" onclick="openModal('signup')"><i class="fas fa-heart"></i> Join VitaCore — It's Free</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:14px"><i class="fas fa-heartbeat logo-icon"></i><span class="logo-text" style="color:#fff">VitaCore</span></div>
+      <p>Your trusted companion for a healthier, happier life — at every stage.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-links"><h4>Features</h4><ul><li><a href="#tracker">BMI Tracker</a></li><li><a href="#nutrition">Nutrition Guide</a></li><li><a href="#diet-plans">Diet Plans</a></li><li><a href="#fitness">Fitness Plans</a></li></ul></div>
+    <div class="footer-links"><h4>Life Stages</h4><ul><li><a href="#">Newborn & Baby</a></li><li><a href="#">Teenagers</a></li><li><a href="#">Pregnant Women</a></li><li><a href="#">Elderly & Seniors</a></li></ul></div>
+    <div class="footer-links"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Our Experts</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 VitaCore. All rights reserved. Built with <i class="fas fa-heart" style="color:#e74c3c"></i> for a healthier world.</p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

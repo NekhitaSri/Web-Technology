@@ -1,0 +1,34 @@
+
+				EXTERNAL.HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>External CSS - Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Online Fitness and Health Tracker</h1>
+    <p>Stay fit by monitoring your daily exercise routine.</p>
+    <div class="box">
+        Water Intake Today: 2 Litres
+    </div>
+</body>
+</html>
+				STYLE.CSS
+body {
+    background-color: #fff2e6;
+    font-family: Arial;
+}
+h1 {
+    color: purple;
+    text-align: center;
+}
+p {
+    font-size: 18px;
+    color: darkblue;
+}
+.box {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: lightgreen;
+}
